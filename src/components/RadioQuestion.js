@@ -8,7 +8,7 @@ class RadioQuestion extends Component{
     render(){
         return(
             <div>
-                <span>{option.text}</span>
+                <span></span>
             </div>
         )
     }
