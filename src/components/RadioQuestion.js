@@ -24,6 +24,12 @@ class RadioQuestion extends Component{
         }
     }
 
+    getValue(e)
+    {
+        console.log(e);
+        this.props.getAnswers(e.target.value);
+    }
+
     render(){
         return(
             <div>
@@ -33,8 +39,8 @@ class RadioQuestion extends Component{
                         if(this.state.selected.id === option.id){
                             return(
                                 <div>
-                                    <input key={option.id} name="test" value={option.id} 
-                                        type="radio" checked/>
+                                    <input key={option.id} name="test" value={option.id}
+                                        type="radio" onChange={e=>this.getValue(e)} checked/>
                                         <span>{option.text}</span>
                                 </div>
                                 )
@@ -42,7 +48,7 @@ class RadioQuestion extends Component{
                             return(
                                 <div>
                                     <input key={option.id} name="test" value={option.id} 
-                                        type="radio" />
+                                        type="radio" onChange={e=>this.getValue(e)}  />
                                         <span>{option.text}</span>
                                 </div>
                                 )

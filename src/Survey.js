@@ -72,9 +72,7 @@ class Survey extends Component {
                 }
             });
         }
-    }
-
-    
+    }    
 
     render(){
         return (
@@ -97,8 +95,6 @@ class Survey extends Component {
             </div>
         );
     }
-
-
 }
 
 export default Survey;

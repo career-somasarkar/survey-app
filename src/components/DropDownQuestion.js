@@ -20,14 +20,15 @@ class DropDownQuestion extends Component{
                 selected:{
                     id:event.target.value
                 }   
-            })
+            });
+            this.props.getAnswers(event.target.value);
         }
     }
 
     render(){
         return(
             <div>
-                <select onChange={this.optionSelected} >
+                <select onChange={e=>this.optionSelected(e)} >
                 {
                     this.state.options.map((option) => {
                         if(this.state.selected.id === option.id){

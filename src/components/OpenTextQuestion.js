@@ -11,23 +11,20 @@ class OpenTextQuestion extends Component{
                 value: this.props.selectedValue
             }
         }
-        this.optionSelected = this.optionSelected.bind(this);
+        //this.optionSelected = this.optionSelected.bind(this);
+        this.getValue = this.getValue.bind(this);
     }
 
-    optionSelected(event){
-        if(event){
-            this.setState({
-                selected:{
-                    id:event.target.value
-                }   
-            })
-        }
+    
+    getValue(event)
+    {
+        this.props.getAnswers(event.target.value);
     }
 
     render(){
         return(
             <div>
-                <input type="text" value={this.state.selected.value}/>
+                <input type="text" onChange={(e)=>this.getValue(e)}/>
             </div>
         )
     }

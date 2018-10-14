@@ -24,7 +24,7 @@ export const SURVEY_DATA = [
       ],
       answer: {
         selectedOption: {
-          id: 2
+          id: 1
         },
         value: null
       }
@@ -38,23 +38,14 @@ export const SURVEY_DATA = [
       ],
       answer: {
         selectedOption: null,
-        value: "I cant say"
+        value: "Please type"
       }
     },
+    
     {
       id: 3,
       text: "Q3",
-      optionType: "OPEN_TEXT",
-      options: [],
-      answer: {
-        selectedOption: null,
-        value: "Some text"
-      }
-    },
-    {
-      id: 4,
-      text: "Q4",
-      optionType: "RADIO",
+      optionType: "DROP_DOWN",
       options: [
         {
           id: 1,
@@ -67,34 +58,10 @@ export const SURVEY_DATA = [
         {
           id: 3,
           text: "c"
-        }
-      ],
-      answer: {
-        selectedOption: {
-          id: 3
-        },
-        value: null
-      }
-    },{
-      id: 5,
-      text: "Q5",
-      optionType: "RADIO",
-      options: [
-        {
-          id: 1,
-          text: "a"
-        },
-        {
-          id: 2,
-          text: "b"
-        },
-        {
-          id: 3,
-          text: "a"
         },
         {
           id: 4,
-          text: "b"
+          text: "d"
         }
       ],
       answer: {
@@ -103,7 +70,17 @@ export const SURVEY_DATA = [
         },
         value: null
       }
-    }
+    },
+    {
+      id: 4,
+      text: "",
+      optionType: "SUMMARY",
+      options: [],
+      answer: {
+        selectedOption: null,
+        value: "Some text"
+      }
+    },
   ]
  ; 
   
