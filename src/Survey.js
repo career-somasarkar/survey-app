@@ -32,19 +32,62 @@ class Survey extends Component {
     }
 
     handleNext(){
-        
+        if(this.state && this.state.index){
+            var cur = this.state.index.current;
+            console.log("[next] cur: " + cur);
+            console.log("[next] max: " + this.state.data);
+            if(this.state.index.max === cur){
+                console.log("reached at end")
+                return;
+            } 
+            this.setState((previousState) => {
+                return {
+                    data: SURVEY_DATA,
+                    index:{
+                        current: previousState.index.current + 1,
+                        min: 0,
+                        max: SURVEY_DATA.length-1
+                    }
+                }
+            });
+        }
     }
 
     handleBack(){
-        
+        if(this.state && this.state.index){
+            var cur = this.state.index.current;
+            console.log("[back] cur: " + cur);
+            if(cur === 0){
+                console.log("reached at start")
+                return;
+            } 
+            this.setState((previousState) => {
+                return {
+                    data: SURVEY_DATA,
+                    index:{
+                        current: previousState.index.current - 1,
+                        min: 0,
+                        max: SURVEY_DATA.length-1
+                    }
+                }
+            });
+        }
     }
-  
+
+    
 
     render(){
         return (
             <div>
                 <hr/>
-                
+                {
+                    this.state && this.state.index.current !== -1
+                    ?
+                    <Question currentQuestion={this.state.data[this.state.index.current]}/>
+                    : 
+                    <div></div>
+                }
+                <hr/>
                 <div>
                     <button onClick={this.handleBack} >Back</button>
                 </div>
@@ -54,6 +97,8 @@ class Survey extends Component {
             </div>
         );
     }
+
+
 }
 
 export default Survey;
